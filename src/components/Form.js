@@ -21,9 +21,20 @@ const Form = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
+    // Mount
+    useEffect(() => {
+        console.log('\n============== Form Component Mount ==============\n');
+    }, []);
+
+    // 조건:  Email 상태변화가 있을때만 호출
     useEffect(() => {
         console.log(`name: ${name}, email: ${email}\n`);
-    });
+    }, [email]);
+
+    // Unmount
+    useEffect(() => {
+        return () => console.log('\n============== Form Component Unmount ==============\n');
+    }, []);
 
     return (
         <>
