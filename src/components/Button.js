@@ -9,7 +9,7 @@ margin: 10px 10px;
 justify-content: center;
 `;
 
-const Title = styled.ActivityIndicator.Text`
+const Title = styled.Text`
 font-size: 24px;
 font-weight: 600;
 color: #ffffff;
