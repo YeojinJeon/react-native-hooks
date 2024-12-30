@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components/native";
 
 const StyledTextInput = styled.TextInput.attrs({
@@ -21,20 +21,20 @@ const Form = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
-    // Mount
+    const refName = useRef(null);
+    const refEmail = useRef(null);
+
+    // Mount & Unmount
     useEffect(() => {
         console.log('\n============== Form Component Mount ==============\n');
+        refName.current.focus();
+        return () => console.log('\n============== Form Component Unmount ==============\n');
     }, []);
 
     // 조건:  Email 상태변화가 있을때만 호출
     useEffect(() => {
         console.log(`name: ${name}, email: ${email}\n`);
     }, [email]);
-
-    // Unmount
-    useEffect(() => {
-        return () => console.log('\n============== Form Component Unmount ==============\n');
-    }, []);
 
     return (
         <>
@@ -44,11 +44,16 @@ const Form = () => {
                 value={name}
                 onChangeText={text => setName(text)}
                 placeholder="name"
+                ref={refName}
+                returnKeyType="next"
+                onSubmitEditing={() => refEmail.current.focus()}
             />
             <StyledTextInput
                 value={email}
                 onChangeText={text => setEmail(text)}
                 placeholder="email"
+                ref={refEmail}
+                returnKeyType="done"
             />
         </>
     );
