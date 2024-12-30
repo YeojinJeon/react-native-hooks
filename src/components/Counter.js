@@ -16,6 +16,7 @@ const Counter = () => {
                 title="+"
                 onPress={() => {
                     setCount(count + 1);
+                    setCount(count + 1);
                 }} />
             <Button
                 title="-"

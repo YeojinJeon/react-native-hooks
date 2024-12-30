@@ -10,9 +10,10 @@ align-items: center;
 `;
 
 const App = () => {
-    return (<Container>
-        <Counter />
-    </Container>
+    return (
+        <Container>
+            <Counter />
+        </Container>
     );
 };
 
