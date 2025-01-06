@@ -4,9 +4,12 @@ export const useFetch = url => {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
 
+    const [inProgress, setInProgress] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setInProgress(true);
                 const res = await fetch(url);
                 const result = await res.json();
                 if (res.ok) {
@@ -17,11 +20,13 @@ export const useFetch = url => {
                 }
             } catch (error) {
                 setError();
+            } finally {
+                setInProgress(false);
             }
         };
         fetchData();
     }, []);
 
-    return { data, error };
+    return { data, error, inProgress };
 
 };
