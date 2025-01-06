@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import Button from "./components/Button";
 import Length from "./components/Length";
 import Children from "./components/Children";
+import Dog from "./components/Dog";
 
 const Container = styled.View`
 flex: 1;
@@ -16,7 +17,7 @@ align-items: center;
 const App = () => {
     return (
         <Container>
-            <Children />
+            <Dog />
         </Container>
     );
 };
