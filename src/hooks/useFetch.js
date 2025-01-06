@@ -13,7 +13,7 @@ export const useFetch = url => {
                 const res = await fetch(url);
                 const result = await res.json();
                 if (res.ok) {
-                    setData(result);
+                    setData(Array.isArray(result) ? result[0] : result);
                     setError(null);
                 } else {
                     throw result;

@@ -6,6 +6,7 @@ import Button from "./components/Button";
 import Length from "./components/Length";
 import Children from "./components/Children";
 import Dog from "./components/Dog";
+import Cat from "./components/Cat";
 
 const Container = styled.View`
 flex: 1;
@@ -17,7 +18,7 @@ align-items: center;
 const App = () => {
     return (
         <Container>
-            <Dog />
+            <Cat />
         </Container>
     );
 };

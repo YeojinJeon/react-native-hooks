@@ -3,18 +3,18 @@ import styled from 'styled-components/native';
 import { useFetch } from '../hooks/useFetch';
 import { View } from 'react-native';
 
-const StyledImage = styled.Image`
+export const StyledImage = styled.Image`
 background-color: #7f8c8d;
 width: 300px;
 height: 300px;
 `;
 
-const ErrorMessage = styled.Text`
+export const ErrorMessage = styled.Text`
 font-size: 18px;
 color: #e74c3c;
 `;
 
-const LoadingMessage = styled.Text`
+export const LoadingMessage = styled.Text`
 font-size: 18px;
 color: #2ecc71;
 `;
