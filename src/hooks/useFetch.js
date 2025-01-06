@@ -19,7 +19,7 @@ export const useFetch = url => {
                     throw result;
                 }
             } catch (error) {
-                setError();
+                setError(error);
             } finally {
                 setInProgress(false);
             }
